@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join with us!</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 850px;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: clamp(25px, 5vw, 38px);
+        color: #222;
+        margin-bottom: 35px;
+    }
+
+    .pictures {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .dancer {
+        width: 220px;
+        max-width: 70%;
+        height: auto;
+        transform: none;
+}
+    }
+
+    button {
+        background: #2685ed;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 15px 55px;
+        font-size: 21px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #1266c7;
+        transform: scale(1.06);
+    }
+
+    button:disabled {
+        background: #65a6e9;
+        cursor: default;
+        transform: none;
+    }
+
+    #message {
+        margin-top: 22px;
+        font-size: 22px;
+        color: #2685ed;
+        font-weight: bold;
+        display: none;
+    }
+
+    @media (max-width: 500px) {
+        .pictures {
+            gap: 12px;
+        }
+
+        .horse {
+            width: 55%;
+        }
+
+        .dancer {
+            width: 30%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Click the button to join with us</h1>
+
+    <div class="pictures">
+        <img class="horse" src="horse.jpeg" alt="Horse creatures">
+        <img class="dancer" src="dancer.jpeg" alt="Dancing man">
+    </div>
+
+    <button id="joinButton" onclick="join()">
+        JOIN
+    </button>
+
+    <p id="message">thank you so much^•^</p>
+
+</div>
+
+<script>
+    function join() {
+        const button = document.getElementById("joinButton");
+        const message = document.getElementById("message");
+
+        button.textContent = "JOINED";
+        button.disabled = true;
+
+        message.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
